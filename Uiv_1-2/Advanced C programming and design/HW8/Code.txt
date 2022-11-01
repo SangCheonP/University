@@ -1,0 +1,96 @@
+1)
+#include
+
+int main(void)
+{
+FILE* fp;
+fp = fopen("a.txt", "wt");
+if (fp == NULL)
+{
+puts("파일오픈실패.");
+return -1;
+}
+int num1, num2;
+
+printf("2개의 정수를 입력해주세요. \n");
+scanf("%d %d", &num1, &num2);
+fprintf(fp, "%d %d", num1, num2);
+
+fclose(fp);
+
+return 0;
+}
+
+---------------------------------------------------------
+2)
+#include
+
+int main(void)
+{
+char str[20];
+FILE* fp;
+fp = fopen("a.txt", "rt");
+if (fp == NULL)
+{
+puts("파일오픈실패.");
+return -1;
+}
+
+while (fgets(str, sizeof(str), fp) != NULL)
+{
+puts(str);
+}
+
+fclose(fp);
+
+return 0;
+}
+
+----------------------------------------------------------
+3)
+#include
+
+int main(void)
+{
+//텍스트파일에 이미 내용이 있고 그것을 가져와서 바꾸는 식으로 생각하고 코딩
+char str[20];
+int ch;
+FILE* fp1;
+FILE* fp2;
+
+fp1 = fopen("src.txt", "rt");
+fp2 = fopen("dst.txt", "wt");
+if (fp1 == NULL|| fp2 == NULL)
+{
+puts("파일오픈실패");
+return -1;
+}
+
+while (fgets(str,sizeof(str),fp1) != NULL)
+{
+puts("파일읽기성공");
+puts(str);
+}
+for (int i = 0; i < sizeof(str); i++)
+{
+if ('a' <= str[i] && str[i] <= 'z')
+{
+str[i] -= 32;
+}
+else if ('A' <= str[i] && str[i] <= 'Z')
+{
+str[i] += 32;
+}
+else
+{
+str[i];
+}
+}
+
+fputs(str, fp2);
+
+fclose(fp1);
+fclose(fp2);
+
+return 0;
+}

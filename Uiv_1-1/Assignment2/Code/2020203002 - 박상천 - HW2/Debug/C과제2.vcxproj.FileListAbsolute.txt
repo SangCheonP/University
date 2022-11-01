@@ -1,0 +1,2 @@
+C:\Users\Administrator\source\repos\C과제2\Debug\C과제2.exe
+C:\Users\Administrator\source\repos\C과제2\Debug\C과제2.pdb

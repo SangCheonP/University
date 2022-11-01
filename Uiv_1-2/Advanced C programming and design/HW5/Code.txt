@@ -1,0 +1,47 @@
+#include
+#include
+
+typedef struct student
+{
+char name[20];
+char location[20];
+char PhoneNum[20];
+} Student;
+
+void ShowStudentInfo(Student* sptr)
+{
+printf("학생이름: %s \n",sptr->name);
+printf("주소: %s \n",sptr->location);
+printf("전화번호: %s \n",sptr->PhoneNum);
+}
+
+int main(void)
+{
+Student arr[5] = { { "가","서울","0000" }, { "나","인천","1111"},{"다","제주도","2222"},{"라","대전","3333"},{"마","천안","4444"}};
+int i;
+int error=0;
+char nm[20];
+
+printf("이름 : ");
+scanf("%s", nm);
+
+for (i = 0; i < 5; i++)
+{
+if (strcmp(nm,arr[i].name)==0)
+{
+ShowStudentInfo(&arr[i]);
+error = 2;
+break;
+}
+else
+{
+error = 1;
+}
+}
+
+if (error == 1)
+{
+printf("정보가 없습니다.");
+}
+return 0;
+}
