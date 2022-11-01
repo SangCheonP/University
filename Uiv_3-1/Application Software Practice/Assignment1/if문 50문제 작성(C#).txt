@@ -1,0 +1,2072 @@
+﻿using System;
+
+
+// 1번째(a와 b 비교)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 50;
+            int b = 50;
+
+
+            if(a < b)
+                Console.WriteLine("b가 a보다 큽니다.");
+            else if(a == b)
+                Console.WriteLine("a와 b는 서로 같습니다.");
+            else
+                Console.WriteLine("a가 b보다 큽니다.");
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 2번째(a의 정보 출력)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 30;
+
+
+            if (a > 0)
+            {
+                Console.WriteLine("a는 양수입니다.");
+                if (a > 30)
+                    Console.WriteLine("a는 30보다 큽니다.");
+            }else
+                Console.WriteLine("a는 양수가 아닙니다.");
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 3번째(성적 산출 프로그램)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("성적을 입력하세요 : ");
+            string num = Console.ReadLine();
+            int i = Int32.Parse(num);
+            if(i >= 90)
+            {
+                Console.WriteLine("A");
+            }else if(i >= 80)
+            {
+                Console.WriteLine("B");
+            }
+            else if (i >= 70)
+            {
+                Console.WriteLine("C");
+            }
+            else
+            {
+                Console.WriteLine("F");
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 4번째(두 수 입력받아 비교하기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("첫 번째 수 : ");
+            string num1 = Console.ReadLine();
+            Console.Write("두 번째 수 : ");
+            string num2 = Console.ReadLine();
+            int i1 = Int32.Parse(num1);
+            int i2 = Int32.Parse(num2);
+            if(i1 > i2)
+                Console.WriteLine("첫번째 수 {0}이 더 큽니다.",i1);
+            else if(i2 > i1)
+                Console.WriteLine("두번째 수 {0}이 더 큽니다.", i2);
+            else
+                Console.WriteLine("두 수가 같습니다.");
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 5번째(수 입력받아 짝수, 홀수 판별)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("정수를 입력해주세요 : ");
+            string num1 = Console.ReadLine();
+            int i1 = Int32.Parse(num1);
+            if((i1%2) == 0)
+                Console.WriteLine("{0}는 짝수입니다.",i1);
+            else
+                Console.WriteLine("{0}는 홀수입니다.",i1);
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 6번째(세 수를 입력받아 가장 큰 값 출력)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("첫 번째 수를 입력해주세요 : ");
+            string num1 = Console.ReadLine();
+            Console.Write("두 번째 수를 입력해주세요 : ");
+            string num2 = Console.ReadLine();
+            Console.Write("세 번째 수를 입력해주세요 : ");
+            string num3 = Console.ReadLine();
+            int i1 = Int32.Parse(num1);
+            int i2 = Int32.Parse(num2);
+            int i3 = Int32.Parse(num3);
+            if ((i1 > i2) && (i1 > i3))
+                Console.WriteLine("{0}, {1}, {2}중에서 {3}이 가장 큽니다.",i1,i2,i3,i1);
+            else if((i1 > i2) && (i1 < i3))
+                Console.WriteLine("{0}, {1}, {2}중에서 {3}이 가장 큽니다.", i1, i2, i3, i3);
+            else if ((i1 < i2) && (i2 > i3))
+                Console.WriteLine("{0}, {1}, {2}중에서 {3}이 가장 큽니다.", i1, i2, i3, i2);
+            else
+                Console.WriteLine("같은 수가 있습니다.");
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 7번째(큰 수를 먼저 입력받아, 다음 수랑 차 구하기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("첫 번째 수를 입력해주세요(단, 큰 수 먼저 입력) : ");
+            string num1 = Console.ReadLine();
+            Console.Write("두 번째 수를 입력해주세요 : ");
+            string num2 = Console.ReadLine();
+
+
+            int i1 = Int32.Parse(num1);
+            int i2 = Int32.Parse(num2);
+
+
+            if(i1 > i2)
+                Console.WriteLine("{0} - {1} = {2}",i1,i2,i1-i2);
+            else
+                Console.WriteLine("큰 수를 먼저 적고 그 다음 작은 수를 입력하세요.");
+
+
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 8번째(수 하나 입력받아서 양수, 음수 구분하기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("숫자 하나를 입력해주세요 : ");
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Int32.Parse(num1);
+
+
+            if(i1 > 0)
+                Console.WriteLine("{0}는 양수입니다.",i1);
+            else if(i1 < 0)
+                Console.WriteLine("{0}는 음수입니다.",i1);
+            else
+                Console.WriteLine("{0}은 0입니다.",i1);
+
+
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 9번째(국,수,영 점수를 입력받고, 평균이 60이상이면 합격이다. 단, 모든 과목이 60점 이상이어야 한다.)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("국어 점수를 입력해주세요 : ");
+            string num1 = Console.ReadLine();
+            Console.Write("수학 점수를 입력해주세요 : ");
+            string num2 = Console.ReadLine();
+            Console.Write("영어 점수를 입력해주세요 : ");
+            string num3 = Console.ReadLine();
+
+
+            int i1 = Int32.Parse(num1);
+            int i2 = Int32.Parse(num1);
+            int i3 = Int32.Parse(num1);
+
+
+            double avg = (i1 + i2 + i3) / 3;
+
+
+            if ((avg >= 60) && (i1 >= 60) && (i2 >= 60) && (i3 >=60))
+                Console.WriteLine("합격입니다.");
+            else
+                Console.WriteLine("불합격입니다.",i1);
+
+
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 10번째(정수 2개를 입력받아 몫과 나머지 구하기, 둘 중 하나라도 0이면 계산할 수 없다.)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("첫 번째 정수를 입력해주세요 : ");
+            string num1 = Console.ReadLine();
+            Console.Write("두 번째 정수를 입력해주세요 : ");
+            string num2 = Console.ReadLine();
+
+
+            int i1 = Int32.Parse(num1);
+            int i2 = Int32.Parse(num2);
+
+
+            int avr = i1 / i2;
+            int rest = i1 % i2;
+
+
+            if ((i1 != 0) && (i2 != 0))
+                Console.WriteLine("{0} 나누기 {1}의 몫은 {2}이고, 나머지는 {3}입니다.",i1, i2, avr, rest);
+            else if((i1 == 0) || (i2 == 0))
+                Console.WriteLine("0이 있어 나눌 수 없습니다.");
+
+
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 11번째(구매한 총 가격에 따라 할인 적용)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("10000원 이상 5%할인");
+            Console.WriteLine("50000원 이상 10%할인");
+            Console.WriteLine("100000원 이상 20%할인");
+            Console.Write("구매한 가격을 입력해주세요 : ");
+            string num1 = Console.ReadLine();
+ 
+            int i1 = Int32.Parse(num1);
+
+
+            if (i1 >= 100000)
+                Console.WriteLine("최종 가격은 {0}원 입니다.",i1 - (i1* 20/100));
+            else if(i1 >= 50000)
+                Console.WriteLine("최종 가격은 {0}원 입니다.", i1 - (i1 * 10/100));
+            else if (i1 >= 50000)
+                Console.WriteLine("최종 가격은 {0}원 입니다.", i1 - (i1 * 5/100));
+            else
+                Console.WriteLine("최종 가격은 {0}원 입니다.",i1);
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 12번째(두 수의 절댓값의 곱)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("첫 번째 수를 입력해주세요 : ");
+            string num1 = Console.ReadLine();
+            Console.Write("두 번째 수를 입력해주세요 : ");
+            string num2 = Console.ReadLine();
+
+
+            int i1 = Int32.Parse(num1);
+            int i2 = Int32.Parse(num2);
+
+
+            if(i1 * i2 >= 0)
+                Console.WriteLine("{0}과 {1}의 절댓값의 곱은 {2}입니다.",i1, i2, i1*i2);
+            else
+                Console.WriteLine("{0}과 {1}의 절댓값의 곱은 {2}입니다.", i1, i2, (i1 * i2 * -1));
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 13번째(각도에 따른 사분면 위치)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("각도를 입력해주세요 : ");
+            string num1 = Console.ReadLine();
+
+
+            int i = Int32.Parse(num1);
+
+
+            if(i == 0)
+                Console.WriteLine("{0}도는 양의 x축", i);
+            else if (i == 90)
+                Console.WriteLine("{0}도는 양의 y축", i);
+            else if (i == 180)
+                Console.WriteLine("{0}도는 음의 y축", i);
+            else if (i == 270)
+                Console.WriteLine("{0}도는 음의 y축", i);
+            else if ((i > 0) && (i < 90))
+                Console.WriteLine("{0}도는 1사분면", i);
+            else if ((i > 90) && (i < 180))
+                Console.WriteLine("{0}도는 2사분면", i);
+            else if ((i > 180) && (i < 270))
+                Console.WriteLine("{0}도는 3사분면", i);
+            else if ((i > 270) && (i < 360))
+                Console.WriteLine("{0}도는 4사분면", i);
+            else if ((i < 0) && (i > 360))
+                Console.WriteLine("잘못입력하셨습니다.");
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 14번째(두 정수를 받아 사칙연산)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("첫 번째 정수를 입력해주세요 : ");
+            string num1 = Console.ReadLine();
+            Console.Write("두 번째 정수를 입력해주세요 : ");
+            string num2 = Console.ReadLine();
+
+
+            Console.Write("연산 종류 선택 1<+>, 2<->, 3<*>, 4</> : ");
+            string oper = Console.ReadLine();
+
+
+            int i1 = Int32.Parse(num1);
+            int i2 = Int32.Parse(num2);
+            int op = Int32.Parse(oper);
+
+
+            if(op == 1)
+                Console.WriteLine("{0} + {1} = {2}",i1,i2,i1+i2);
+            else if(op == 2)
+                Console.WriteLine("{0} - {1} = {2}", i1, i2, i1 - i2);
+            else if(op == 3)
+                Console.WriteLine("{0} * {1} = {2}", i1, i2, i1 * i2);
+            else if(op == 4)
+                Console.WriteLine("{0} / {1} = {2}", i1, i2, i1 / i2);
+            else
+                Console.WriteLine("잘못입력하셨습니다.");
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 15번째(키와 몸무게를 받아  BMI나타내기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("키(m)를 입력해주세요 : ");
+            string num1 = Console.ReadLine();
+            Console.Write("몸무게(kg)를 입력해주세요 : ");
+            string num2 = Console.ReadLine();
+
+
+            double i1 = Convert.ToDouble(num1);
+            double i2 = Convert.ToDouble(num2);
+            double bmi = i2 / (i1 * i1);
+            Console.Write("키 : {0}, 몸무게 : {1}의 bmi:{2}는 ",i1,i2,bmi);
+
+
+            if(bmi < 18.5)
+                Console.WriteLine("저체중");
+            else if(bmi >= 18.5 && bmi <23)
+                Console.WriteLine("정상체중");
+            else if (bmi >= 23 && bmi < 25)
+                Console.WriteLine("과체중");
+            else if (bmi >= 25 && bmi < 30)
+                Console.WriteLine("비만");
+            else if (bmi >= 30 && bmi < 35)
+                Console.WriteLine("고도비만");
+            else if (bmi >= 35)
+                Console.WriteLine("초고도비만");
+
+
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 16번째(소득에 따른 세금 비율 출력)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("소득을 입력해주세요(단위: 만원 1200만원인경우 1200) : ");
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+            Console.Write("{0}만원의 세율은 ",i1);
+            if(i1 <= 1200)
+                Console.Write("6%");
+            else if(i1 <= 4600)
+                Console.Write("15%");
+            else if (i1 <= 8800)
+                Console.Write("24%");
+            else if (i1 <= 30000)
+                Console.Write("35%");
+            else if (i1 > 30000)
+                Console.Write("38%");
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 17번째(섭씨, 화씨 바꾸기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("온도입력 : ");
+            string num1 = Console.ReadLine();
+            Console.Write("온도 단위 입력 : ");
+            string num2 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+            double k = 0;
+
+
+            if(num2 == "c" || num2 == "C")
+            {
+                k = ((9.0 / 5.0) * i1 + 32);
+                Console.WriteLine("{0}{1} = {2}F",i1,num2,k);
+            }else if(num2 == "f" || num2 == "F")
+            {
+                k = ((5.0 / 9.0) * (i1 - 32));
+                Console.WriteLine("{0}{1} = {2}C", i1, num2, k);
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 18번째(세자리 정수 받아 각 자리의 홀,짝수 구별)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("세 자리 정수값 하나 입력 : ");
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+            int d100, d10, d1;
+            d100 = i1 / 100;
+            d10 = i1 / 10;
+            d1 = i1 % 10;
+            if(d100 % 2 != 0)
+                Console.WriteLine("100의 자리는 홀수");
+            else
+                Console.WriteLine("100의 자리는 짝수");
+            if (d10 % 2 != 0)
+                Console.WriteLine("10의 자리는 홀수");
+            else
+                Console.WriteLine("10의 자리는 짝수");
+            if (d1 % 2 != 0)
+                Console.WriteLine("1의 자리는 홀수");
+            else
+                Console.WriteLine("1의 자리는 짝수");
+
+
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 19번째(작은 수가 큰 수의 약수인지 체크)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("첫 번째 정수 입력 : ");
+            string num1 = Console.ReadLine();
+            Console.Write("두 번째 정수 입력 : ");
+            string num2 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+            int i2 = Convert.ToInt32(num2);
+            
+            if(i1 < i2)
+            {
+                int temp = i2;
+                i2 = i1;
+                i1 = temp;
+            }
+            if((i1%i2) != 0)
+            {
+                Console.WriteLine("{1}은 {0}의 약수가 아닙니다.", i1, i2); ;
+            }
+            else
+            {
+                Console.WriteLine("{1}은 {0}의 약수입니다.",i1,i2);
+            }
+
+
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 20번째(정답 고르기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("1+1=2 입니까? 1.네 2.아니요 ");
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+            
+            if(i1 == 1)
+            {
+                Console.WriteLine("정답입니다!");
+            }
+            else if(i1 == 2)
+            {
+                Console.WriteLine("틀렸습니다.");
+            }
+            else
+            {
+                Console.WriteLine("잘못된 값을 입력하셨습니다.");
+            }
+
+
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 21번째(내가 좋아하는 숫자 맞추기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("내가 좋아하는 숫자를 맞춰봐!(1~5중 두 개) ");
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+            
+            if(i1 == 1 || i1 ==3)
+            {
+                Console.WriteLine("맞췄어! 내가 좋아하는 숫자는 {0}이야.",i1);
+            }
+            else
+            {
+                Console.WriteLine("틀렸어ㅜㅠ 다시 생각해봐. 너가 고른 숫자는 {0}이야.",i1);
+            }
+
+
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+using System;
+
+
+// 22번째(나이에 따른 입장료 설명)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("고객: 입장료는 얼마에요?");
+            Console.WriteLine("나: 나이가 어떻게 되세요?");
+
+
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+
+
+            if (i1 >= 60)
+            {
+                Console.WriteLine("노약자 요금제입니다. 무료입장 하세요.");
+            }
+            else if (i1 >= 20)
+            {
+                Console.WriteLine("어른 요금제입니다. 가격은 9000원입니다.");
+            }
+            else if(i1 >= 8)
+            {
+                Console.WriteLine("청소년 요금제입니다. 가격은 5000원입니다.");
+            }
+            else
+            {
+                Console.WriteLine("유아 요금입니다. 가격은 무료입니다.");
+            }
+
+
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 23번째(3의 배수인지 판단)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("정수를 입력해주세요 : ");
+
+
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+
+
+            if ((i1%3) == 0)
+            {
+                Console.WriteLine("{0}은 3의 배수입니다.",i1);
+            }
+            else
+            {
+                Console.WriteLine("{0}은 3의 배수가 아닙니다.",i1);
+            }
+
+
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 24번째(놀이공원 입장 키 체크)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("당신의 키를 입력해주세요 : ");
+
+
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+
+
+            if (i1 >= 110)
+            {
+                Console.WriteLine("키가 110cm 이상입니다. 탑승해주세요.");
+            }
+            else
+            {
+                Console.WriteLine("보호자가 곁에 있으면 : 1 / 없으면 : 0 입력");
+                string num2 = Console.ReadLine();
+                int i2 = Convert.ToInt32(num2);
+                if(i2 == 1)
+                {
+                    Console.WriteLine("보호자와 같이 동반탑승해주세요."); ;
+                }
+                else
+                {
+                    Console.WriteLine("다음에 보호자랑 같이 와주세요.");
+                }
+            }
+
+
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 25번째(통장에서 돈 출금하기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int mon = 1000000;
+            Console.WriteLine("인출할 금액을 입력해주세요 : ");
+
+
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+
+
+            if(i1 > mon)
+            {
+                Console.WriteLine("잔액이 모자랍니다.");
+            }else if((i1%10000) != 0)
+            {
+                Console.WriteLine("만원 단위로만 출력이 가능합니다.");
+            }
+            else
+            {
+                Console.WriteLine("{0}원을 출금합니다. 남은 잔액은 {1}원 입니다.",i1,mon-i1);
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 26번째
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("나이를 입력해주세요 : ");
+
+
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+
+
+            if(i1 >= 20)
+            {
+                if(i1 >= 40)
+                {
+                    Console.WriteLine("중장년층입니다.");
+                }
+                else
+                {
+                    Console.WriteLine("청년층입니다.");
+                }
+            }else if(i1 <= 19)
+            {
+                if (i1 < 14)
+                {
+                    Console.WriteLine("어린이입니다.");
+                }
+                else
+                {
+                    Console.WriteLine("청소년입니다.");
+                }
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 27번째(점수의 총점, 평균, 등급)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("JAVA 점수를 입력해주세요 : ");
+            string num1 = Console.ReadLine();
+            Console.Write("C++ 점수를 입력해주세요 : ");
+            string num2 = Console.ReadLine();
+            Console.Write("Pyton 점수를 입력해주세요 : ");
+            string num3 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+            int i2 = Convert.ToInt32(num2);
+            int i3 = Convert.ToInt32(num3);
+
+
+            int a = i1 + i2 + i3;
+            double avg = a / 3;
+
+
+            if(avg < 60)
+            {
+                Console.WriteLine("당신의 성적은 F입니다.");
+                Console.WriteLine("총점은 {0}이며, 평균은 {1}입니다.",a,avg);
+            }else if (avg < 70)
+            {
+                Console.WriteLine("당신의 성적은 D입니다.");
+                Console.WriteLine("총점은 {0}이며, 평균은 {1}입니다.", a, avg);
+            }
+            else if (avg < 80)
+            {
+                Console.WriteLine("당신의 성적은 C입니다.");
+                Console.WriteLine("총점은 {0}이며, 평균은 {1}입니다.", a, avg);
+            }
+            else if (avg < 90)
+            {
+                Console.WriteLine("당신의 성적은 B입니다.");
+                Console.WriteLine("총점은 {0}이며, 평균은 {1}입니다.", a, avg);
+            }
+            else if (avg <= 100)
+            {
+                Console.WriteLine("당신의 성적은 A입니다.");
+                Console.WriteLine("총점은 {0}이며, 평균은 {1}입니다.", a, avg);
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 28번째(세 정수에서 최대, 최소)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("첫 번째 정수를 입력해주세요 : ");
+            string num1 = Console.ReadLine();
+            Console.Write("두 번째 정수를 입력해주세요 : ");
+            string num2 = Console.ReadLine();
+            Console.Write("세 번째 정수를 입력해주세요 : ");
+            string num3 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+            int i2 = Convert.ToInt32(num2);
+            int i3 = Convert.ToInt32(num3);
+            int max = 0;
+            int min = 0;
+
+
+            if(i1 > i2 && i1 > i3)
+            {
+                max = i1;
+                if(i2 > i3)
+                {
+                    min = i3;
+                }
+                else
+                {
+                    min = i2;
+                }
+            }else if(i2 > i1 && i2 > i3)
+            {
+                max = i2;
+                if(i1 > i3)
+                {
+                    min = i3;
+                }
+                else
+                {
+                    min = i1;
+                }
+            }
+            else if (i3 > i1 && i3 > i2)
+            {
+                max = i3;
+                if (i1 > i2)
+                {
+                    min = i2;
+                }
+                else
+                {
+                    min = i1;
+                }
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 29번째(두 수의 차, 큰 수에서 작은 수 뺀 값)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("첫 번째 정수를 입력해주세요 : ");
+            string num1 = Console.ReadLine();
+            Console.Write("두 번째 정수를 입력해주세요 : ");
+            string num2 = Console.ReadLine();
+
+
+
+
+            int i1 = Convert.ToInt32(num1);
+            int i2 = Convert.ToInt32(num2);
+
+
+            int result = 0;
+
+
+            if(i1 > i2)
+            {
+                Console.WriteLine("{0}과 {1}의 차는 {2}입니다.",i1,i2,i1-i2);
+            }
+            else
+            {
+                Console.WriteLine("{0}과 {1}의 차는 {2}입니다.", i1, i2, i2 - i1);
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 30번째(신호등의 색깔에 따른 행동)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("신호등의 색갈 입력(R, G, Y) : ");
+            string num1 = Console.ReadLine();
+            
+
+
+            if(num1 == "R")
+            {
+                Console.WriteLine("빨간불입니다. 정지하세요!");
+            }
+            else if(num1 == "Y")
+            {
+                Console.WriteLine("노란불입니다. 주의하세요!");
+            }
+            else if (num1 == "G")
+            {
+                Console.WriteLine("초록불입니다. 진행하세요!");
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 31번째(삼각형 모양 출력하기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("삼각형의 세 변을 입력하세요!");
+            Console.Write("첫번째 변의 길이 : ");
+            string num1 = Console.ReadLine();
+            Console.Write("두번째 변의 길이 : ");
+            string num2 = Console.ReadLine();
+            Console.Write("세번째 변의 길이 : ");
+            string num3 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+            int i2 = Convert.ToInt32(num2);
+            int i3 = Convert.ToInt32(num3);
+
+
+
+
+            if (i1 == i2 && i2 == i3)
+            {
+                Console.WriteLine("정삼각형입니다.");
+            }
+            else if(i1 == i2 || i2 == i3 || i3 == i1)
+            {
+                Console.WriteLine("이등변 삼각형입니다.");
+            }
+            else
+            {
+                Console.WriteLine("일반 삼각형입니다.");
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 32번째(비오는 지 물어보기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int rain = 0;
+            Console.WriteLine("밖에 비가 오면 1 안 오면 0을 입력해주세요.");
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+            rain = i1;
+
+
+            if(rain == 1)
+            {
+                Console.WriteLine("우산을 챙겨가세요!");
+            }else if(rain == 0)
+            {
+                Console.WriteLine("비가 오지 않는군요. 좋은 외출 되세요!");
+            }
+            else
+            {
+                Console.WriteLine("어라? 잘못 입력하신 것 같아요.");
+                Console.WriteLine("0이나 1중 값을 입력해주세요.");
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 33번째(양수면 1더하고, 음수면 1을 뺀 값 출력)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("정수를 하나 입력해주세요. ");
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+
+
+            if(i1 > 0)
+            {
+                Console.WriteLine("입력하신 {0}에서 1을 더한 값은 {1}입니다!",i1,i1+1);
+            }else if(i1 < 0)
+            {
+                Console.WriteLine("입력하신 {0}에서 1을 뺀 값은 {1}입니다!", i1, i1 - 1);
+            }
+            else if(i1 == 0)
+            {
+                Console.WriteLine("0을 입력받아서 아무 행동도 하지 않습니다.");
+            }
+            else
+            {
+                Console.WriteLine("정수로 다시 입력해주세요!");
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 34번째(음, 양수 구분하고, 또 홀, 짝수 구분)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("0이 아닌 정수를 하나 입력해주세요. ");
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+            
+            if(i1 > 0)
+            {
+                if(i1%2 == 0)
+                    Console.WriteLine("{0}은 양의 짝수 입니다.",i1);
+                else
+                    Console.WriteLine("{0}은 양의 홀수 입니다.", i1);
+            }
+            else if(i1 < 0)
+            {
+                if (i1 % 2 == 0)
+                    Console.WriteLine("{0}은 음의 짝수 입니다.", i1);
+                else
+                    Console.WriteLine("{0}은 음의 홀수 입니다.", i1);
+            }
+            else
+            {
+                Console.WriteLine("조건에 맞는 수를 입력해주세요.");
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 35번째(파일 재생하기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("1.파일 열기");
+            Console.WriteLine("2.재생");
+            Console.WriteLine("3.재생 옵션");
+            Console.Write("선택: ");
+
+
+            string num1 = Console.ReadLine();
+            string num2 = "test.avi";
+            int i1 = Convert.ToInt32(num1);
+            
+            if(i1 == 1)
+            {
+                Console.Write("재생할 파일 이름? ");
+                num2 = Console.ReadLine();
+            }
+            else if(i1 == 2)
+            {
+                Console.WriteLine("{0}을 재생합니다.",num2);
+            }
+            else if (i1 == 3)
+            {
+                Console.WriteLine("재생 옵션을 선택합니다.");
+            }
+            else
+            {
+                Console.WriteLine("잘못 선택하셨습니다.");
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 36번째(윤년판단하기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("올해의 년도를 입력해주세요: ");
+
+
+            string num1 = Console.ReadLine();
+            int i1 = Convert.ToInt32(num1);
+            
+            if((i1%4==0) && (i1%100!=0 || i1 % 400 == 0))
+            {
+                Console.WriteLine("축하합니다! 올해는 윤년입니다!");
+            }
+            else
+            {
+                Console.WriteLine("아쉽군요. 올해는 윤년이 아닙니다.");
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 37번째(숫자 비교, 모든 해당사항)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("첫번째 정수를 입력해주세요: ");
+            string num1 = Console.ReadLine();
+            Console.Write("두번째 정수를 입력해주세요: ");
+            string num2 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+            int i2 = Convert.ToInt32(num2);
+
+
+            if (i1 > i2)
+            {
+                Console.WriteLine("{0}는 {1}보다 큽니다.",i1,i2);
+            }
+
+
+            if (i1 < i2)
+            {
+                Console.WriteLine("{0}는 {1}보다 작습니다.", i1, i2);
+            }
+
+
+            if (i1 >= i2)
+            {
+                Console.WriteLine("{0}는 {1}보다 크거나 같습니다.", i1, i2);
+            }
+
+
+            if (i1 <= i2)
+            {
+                Console.WriteLine("{0}는 {1}보다 작거나 같습니다.", i1, i2);
+            }
+
+
+            if (i1 == i2)
+            {
+                Console.WriteLine("{0}과 {1}는 같습니다.", i1, i2);
+            }
+
+
+            if (i1 != i2)
+            {
+                Console.WriteLine("{0}과 {1}는 다릅니다.", i1, i2);
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 38번째(행운, 죽음의 숫자)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("아무 정수나 입력해주세요: ");
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+
+
+            if(i1 == 7)
+            {
+                Console.WriteLine("행운의 숫자 7이군요!");
+            }else if(i1 == 4)
+            {
+                Console.WriteLine("죽음의 숫자 4인가요;;;");
+            }
+            else
+            {
+                Console.WriteLine("그냥 평범한 숫자 {0}네요.",i1);
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 39번째(학점 평가)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("평균학점 입력 : ");
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+            
+            if(i1 > 4.5)
+            {
+                Console.WriteLine("성적이 잘못 입력되었습니다.");
+            }
+            else if(i1 >= 4.3)
+            {
+                Console.WriteLine("성적이 최고 우수한 학생입니다.");
+            }else if(i1 >= 3.8)
+            {
+                Console.WriteLine("성적이 매우 우수한 학생입니다.");
+            }
+            else if(i1 >= 3.0)
+            {
+                Console.WriteLine("성적이 우수한 학생입니다.");
+            }
+            else
+            {
+                Console.WriteLine("성적이 3.0미만인 학생입니다.");
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 40번째(운전면허 시험 합격)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("번호를 선택 : 1(1종면허), 2(2종면허) : ");
+            string num1 = Console.ReadLine();
+            Console.Write("필기시험 점수 입력 : ");
+            string num2 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+            int i2 = Convert.ToInt32(num2);
+
+
+            if(i1 == 1)
+            {
+                if(i2 >= 70)
+                {
+                    Console.WriteLine("1종면허 합격");
+                }
+                else
+                {
+                    Console.WriteLine("1종면허 불합격");
+                }
+            }
+            else if(i1 == 2)
+            {
+                if (i2 >= 60)
+                {
+                    Console.WriteLine("1종면허 합격");
+                }
+                else
+                {
+                    Console.WriteLine("1종면허 불합격");
+                }
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 41번째(계절 판별하기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("월(month)을 입력 : ");
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+
+
+            if(i1>=3 && i1 < 6)
+            {
+                Console.WriteLine("{0}월은 봄입니다.",i1);
+            }
+            else if(i1 >= 6 && i1 < 9)
+            {
+                Console.WriteLine("{0}월은 여름입니다.",i1);
+            }
+            else if (i1 >= 9 && i1 < 12)
+            {
+                Console.WriteLine("{0}월은 가을입니다.", i1);
+            }
+            else if (i1 == 12 || i1 == 1 || i1 == 2)
+            {
+                Console.WriteLine("{0}월은 겨울입니다.", i1);
+            }
+            else
+            {
+                Console.WriteLine("잘못 입력 하였습니다.");
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 42번째(정답맞추기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int random = 16;
+            Console.Write("1~20까지의 수 중 하나를 맞추시오 : ");
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+
+
+            if(random > i1)
+                Console.WriteLine("{0}은 정답보다 작습니다.",i1);
+            else if(random == i1)
+                Console.WriteLine("{0}은 정답입니다!",i1);
+            else if (random < i1)
+                Console.WriteLine("{0}은 정답보다 큽니다.",i1);
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 43번째(소득에 따른 과세금액)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int mon;
+            Console.Write("종합소득 금액을 입력하세요 : ");
+            string num1 = Console.ReadLine();
+
+
+            int i1 = Convert.ToInt32(num1);
+
+
+            if(i1 <= 1200000)
+            {
+                mon = i1 * 6 / 100;
+                Console.WriteLine("종합소득 금액에 따른 세율은 6%이고 과세금액은 {0}원입니다.",mon);
+            }
+            else if (i1 <= 4600000)
+            {
+                mon = 720000 + (i1 - 1200000) * 15 / 100;
+                Console.WriteLine("종합소득 금액에 따른 세율은 15%이고 과세금액은 {0}원입니다.", mon);
+            }
+            else if (i1 <= 8800000)
+            {
+                mon = 5820000 + (i1 - 4600000) * 24 / 100;
+                Console.WriteLine("종합소득 금액에 따른 세율은 24%이고 과세금액은 {0}원입니다.", mon);
+            }
+            else if (i1 <= 30000000)
+            {
+                mon = 15900000 + (i1 - 8800000) * 35 / 100;
+                Console.WriteLine("종합소득 금액에 따른 세율은 35%이고 과세금액은 {0}원입니다.", mon);
+            }
+            else if (i1 > 30000000)
+            {
+                mon = 90100000 + (i1 - 30000000) * 38 / 100;
+                Console.WriteLine("종합소득 금액에 따른 세율은 38%이고 과세금액은 {0}원입니다.", mon);
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 44번째(성별입력하기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("성별을 입력해주세요(M/F) : ");
+            string num1 = Console.ReadLine();
+
+
+            if(num1 == "m" && num1 == "M")
+                Console.WriteLine("남자입니다.");
+            else if(num1 == "f" && num1 == "F")
+                Console.WriteLine("여자입니다.");
+            else
+                Console.WriteLine("잘못 입력하였습니다.");
+            
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 45번째(컵의 사이즈 확인하기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("컵의 사이즈는 몇ml입니까? ");
+            string num1 = Console.ReadLine();
+            int i = Convert.ToInt32(num1);
+
+
+            if(i < 100)
+                Console.WriteLine("컵의 사이즈는 Small입니다.");
+            else if(i >= 100 && 200 > i)
+                Console.WriteLine("컵의 사이즈는 Medium입니다.");
+            else if(i >= 200)
+                Console.WriteLine("컵의 사이즈는 Large입니다.");
+            
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 46번째(좌표입력해서, 사분면 고르기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("x좌표를 입력해주세요 : ");
+            string num1 = Console.ReadLine();
+            Console.Write("y좌표를 입력해주세요 : ");
+            string num2 = Console.ReadLine();
+            int i1 = Convert.ToInt32(num1);
+            int i2 = Convert.ToInt32(num2);
+
+
+            if(i1 > 0 && i2 > 0)
+                Console.WriteLine("1사분면 입니다.");
+            else if (i1 < 0 && i2 > 0)
+                Console.WriteLine("2사분면 입니다.");
+            else if (i1 < 0 && i2 < 0)
+                Console.WriteLine("3사분면 입니다.");
+            else if (i1 > 0 && i2 < 0)
+                Console.WriteLine("4사분면 입니다.");
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 47번째(월에 따른 일표시)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("월 입력해주세요 : ");
+            string num1 = Console.ReadLine();
+            int i1 = Convert.ToInt32(num1);
+
+
+            if(i1 == 1 || i1 == 3 || i1 == 5 || i1 == 7 || i1 == 8 || i1 == 10 || i1 == 12)
+                Console.WriteLine("31일까지 있습니다.");
+            else if(i1 == 2)
+                Console.WriteLine("28일 또는 29일까지 있습니다.");
+            else if(i1 == 4 || i1 == 6 || i1 == 9 || i1 == 11)
+                Console.WriteLine("30일까지 있습니다.");
+            else
+                Console.WriteLine("잘못 입력하였습니다.");
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 48번째(계절에 따른 실내 온도)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("계절을 입력하세요 : ");
+            string num1 = Console.ReadLine();
+            Console.Write("실내 온도를 입력하세요 : ");
+            string num2 = Console.ReadLine();
+            int i2 = Convert.ToInt32(num2);
+
+
+            if(num1 == "겨울")
+            {
+                if(i2 >= 20 && i2 <= 22)
+                    Console.WriteLine("적정 온도입니다.");
+                else
+                    Console.WriteLine("적정 온도가 아닙니다.");
+            }
+            else if(num1 == "여름")
+            {
+                if (i2 >= 24 && i2 <= 26)
+                    Console.WriteLine("적정 온도입니다.");
+                else
+                    Console.WriteLine("적정 온도가 아닙니다.");
+            }
+            else
+            {
+                Console.WriteLine("계절은 겨울과 여름만 입력할 수 있습니다.");
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 49번째(도읍맞추기)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("다음 중 통일신라 시대의 도읍을 찾아 입력하시오.");
+            Console.WriteLine("1. 평양");
+            Console.WriteLine("2. 서라벌");
+            Console.WriteLine("3. 개성");
+            Console.WriteLine("4. 한양");
+            Console.WriteLine("5. 전주");
+            Console.Write("정답은 몇 번 입니까? : ");
+            string num1 = Console.ReadLine();
+            int i1 = Convert.ToInt32(num1);
+
+
+            if(i1 == 1)
+                Console.WriteLine("오답입니다. 평양은 고구려의 도읍입니다.");
+            else if(i1 == 2)
+                Console.WriteLine("정답입니다. 통일신랑의 도읍은 서라벌입니다.");
+            else if (i1 == 3)
+                Console.WriteLine("오답입니다. 개성은 고려의 도읍입니다.");
+            else if (i1 == 4)
+                Console.WriteLine("오답입니다. 한양은 조선의 도읍입니다.");
+            else if (i1 == 5)
+                Console.WriteLine("오답입니다. 전주는 후백제의 도읍입니다.");
+            else
+                Console.WriteLine("잘못 입력하였습니다.");
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+
+using System;
+
+
+// 50번째(입력한 시간보다 45분빠르게 알람 설정)
+
+
+namespace ClassPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("시간을 입력해주세요 : ");
+            string num1 = Console.ReadLine();
+            Console.Write("분을 입력해주세요 : ");
+            string num2 = Console.ReadLine();
+            int h = Convert.ToInt32(num1);
+            int m = Convert.ToInt32(num2);
+
+
+            if (m < 45 && h > 0)
+            {
+                h--;
+                m = m + 60 - 45;
+            }
+            else if (m < 45)
+            {
+                h = 23;
+                m = m + 60 - 45;
+            }
+            else
+                m -= 45;
+            Console.WriteLine("{0}시 {1}분",h,m);
+        }
+    }
+}

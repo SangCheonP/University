@@ -1,0 +1,10 @@
+C:\Users\pswlo\source\repos\_0511_2\bin\Debug\_0511_2.exe.config
+C:\Users\pswlo\source\repos\_0511_2\bin\Debug\_0511_2.exe
+C:\Users\pswlo\source\repos\_0511_2\bin\Debug\_0511_2.pdb
+C:\Users\pswlo\source\repos\_0511_2\obj\Debug\_0511_2.csproj.AssemblyReference.cache
+C:\Users\pswlo\source\repos\_0511_2\obj\Debug\_0511_2.Form1.resources
+C:\Users\pswlo\source\repos\_0511_2\obj\Debug\_0511_2.Properties.Resources.resources
+C:\Users\pswlo\source\repos\_0511_2\obj\Debug\_0511_2.csproj.GenerateResource.cache
+C:\Users\pswlo\source\repos\_0511_2\obj\Debug\_0511_2.csproj.CoreCompileInputs.cache
+C:\Users\pswlo\source\repos\_0511_2\obj\Debug\_0511_2.exe
+C:\Users\pswlo\source\repos\_0511_2\obj\Debug\_0511_2.pdb
