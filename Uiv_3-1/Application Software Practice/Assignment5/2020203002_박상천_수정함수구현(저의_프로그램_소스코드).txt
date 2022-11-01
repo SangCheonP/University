@@ -1,0 +1,267 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
+namespace _0525_fin_
+{
+    /*public static class BookQuery
+    {
+        public static string selectBookQuery = string.Format("SELECT * FROM books");
+    }*/
+    public partial class Form1 : Form
+    {
+        public static string dbInfo()
+        {
+            string _server = "127.0.0.1";
+            int _port = 3306;
+            string _database = "world";
+            string _id = "root";
+            string _pw = "5474";
+
+            string _connectionAddress = string.Format("Server={0};Port={1};Database={2};uid={3};pwd={4};"
+                , _server, _port, _database, _id, _pw);
+
+            return _connectionAddress;
+        }
+
+        public Form1() //가장 먼저 실행되는 코드
+        {
+            InitializeComponent();
+            string _connectionAddress = dbInfo();
+
+            try
+            {//문법
+                using (MySqlConnection dbConn = new MySqlConnection(_connectionAddress))
+                {
+                    dbConn.Open(); //db열기
+                    string selectBookQuery = string.Format("SELECT * FROM books"); //query문 정의
+
+                    MySqlCommand command1 = new MySqlCommand(selectBookQuery, dbConn); //Mysql 문법(dbConn과 query를 넣음 객체에)
+                    MySqlDataAdapter adapter1 = new MySqlDataAdapter(command1); //db와 객체 사이를 연결
+
+                    //MessageBox.Show(selectBookQuery);
+
+                    DataTable dataTable1 = new DataTable();
+                    adapter1.Fill(dataTable1);
+
+                    BookDataGridView.DataSource = dataTable1; //DataGrid에 데이터를 뿌림
+                    dbConn.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            BookDataGridView.Columns["UserId"].Visible = false; //각 colum들을 보지 않음
+            BookDataGridView.Columns["UserName"].Visible = false;
+            BookDataGridView.Columns["isBorrowed"].Visible = false;
+            BookDataGridView.Columns["BorrowedAt"].Visible = false;
+        }
+
+        private void BookDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show(BookDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString() + " 도서 선택"); //선택한 도서이름 출력
+
+            txtIdx.Text = BookDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString(); //txtBox에 정보 출력
+            txtIsbn.Text = BookDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtBookName.Text = BookDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtPublisher.Text = BookDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtPages.Text = BookDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+        }
+
+        private void btnAddBooks_Click(object sender, EventArgs e)
+        {
+            string _connectionAddress = dbInfo();
+            string isBorrwed = "RentalAvailable"; //대여가능
+
+            if (txtIsbn.Text == "" || txtBookName.Text == "" || txtPublisher.Text == "" || txtPages.Text == "")//txtBox가 비어있으면
+            {
+                MessageBox.Show("도서 정보를 입력해주세요.");
+            }
+            else
+            {
+                try
+                {//문법
+                    using (MySqlConnection dbConn = new MySqlConnection(_connectionAddress))
+                    {
+                        dbConn.Open(); //db열기
+
+                        string insertBookQuery = string.Format("INSERT INTO books (Isbn, BookName, Publisher, Page, isBorrowed)" +
+                                                                  " VALUES ('{0}', '{1}', '{2}', '{3}', '{4}');",
+                                                               txtIsbn.Text, txtBookName.Text, txtPublisher.Text, txtPages.Text, isBorrwed);
+
+                        //MessageBox.Show(insertBookQuery);
+
+                        MySqlCommand command2 = new MySqlCommand(insertBookQuery, dbConn);
+                        if (command2.ExecuteNonQuery() != 1) //도서정보가 잘 입력되지 않느냐?
+                        {
+                            MessageBox.Show("도서 정보 일력 실패!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("ISB: " + txtIsbn.Text + ", 도서 정보가 입력되었습니다");
+                        }
+
+                        //------------------------------------------------------------------------
+
+                        string selectBookQuery = string.Format("SELECT * FROM books"); //query문 정의
+
+                        MySqlCommand command3 = new MySqlCommand(selectBookQuery, dbConn); //Mysql 문법(dbConn과 query를 넣음 객체에)
+                        MySqlDataAdapter adapter3 = new MySqlDataAdapter(command3); //db와 객체 사이를 연결
+                        DataTable dataTable3 = new DataTable();
+                        adapter3.Fill(dataTable3);
+
+                        BookDataGridView.DataSource = dataTable3; //DataGrid에 데이터를 뿌림
+
+
+                        dbConn.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                BookDataGridView.Columns["UserId"].Visible = false; //각 colum들을 보지 않음
+                BookDataGridView.Columns["UserName"].Visible = false;
+                BookDataGridView.Columns["isBorrowed"].Visible = false;
+                BookDataGridView.Columns["BorrowedAt"].Visible = false;
+            }
+        }
+
+        private void btnDeleteBooks_Click(object sender, EventArgs e)
+        {
+            string _connectionAddress = dbInfo();
+            int idx = 0;
+            string Isbn = "";
+
+            if (txtIdx.Text == "" || txtIsbn.Text == "" || txtBookName.Text == "" || txtPublisher.Text == "" || txtPages.Text == "")//txtBox가 비어있으면
+            {
+                MessageBox.Show("도서 정보를 입력해주세요.");
+            }
+            else
+            {
+                idx = int.Parse(txtIdx.Text.Trim());
+                Isbn = txtIsbn.Text.Trim();
+
+
+            }
+            try
+            {//문법
+                using (MySqlConnection dbConn = new MySqlConnection(_connectionAddress))
+                {
+                    dbConn.Open(); //db열기
+                    string deleteBooksQuery = string.Format("DELETE FROM books WHERE Idx={0} AND Isbn='{1}';", idx, Isbn);
+                    MySqlCommand command5 = new MySqlCommand(deleteBooksQuery, dbConn);
+                    //MessageBox.Show(deleteBooksQuery);
+                    if (command5.ExecuteNonQuery() != 1)
+                    {
+                        MessageBox.Show("도서가 삭제되지 않았습니다.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("도서가 삭제되었습니다.");
+                    }
+                    //---------------------------------------------------------
+                    string selectBookQuery = string.Format("SELECT * FROM books"); //query문 정의
+
+                    MySqlCommand command3 = new MySqlCommand(selectBookQuery, dbConn); //Mysql 문법(dbConn과 query를 넣음 객체에)
+                    MySqlDataAdapter adapter3 = new MySqlDataAdapter(command3); //db와 객체 사이를 연결
+                    DataTable dataTable3 = new DataTable();
+                    adapter3.Fill(dataTable3);
+
+                    BookDataGridView.DataSource = dataTable3; //DataGrid에 데이터를 뿌림
+                    dbConn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void btnModiBooks_Click(object sender, EventArgs e)
+        {
+            string _connectionAddress = dbInfo();
+            int idx = 0;
+            string Isbn = "", BookName = "", Publisher = "", Page = "";
+            if(txtIdx.Text == "" || txtIsbn.Text == "" || txtBookName.Text == "" || txtPublisher.Text == "" || txtPages.Text == "")
+            {
+                MessageBox.Show("도서 정보를 입력해주세요");
+            }
+            else
+            {
+                idx = int.Parse(txtIdx.Text.Trim());
+                Isbn = txtIsbn.Text.Trim();
+                BookName = txtBookName.Text.Trim();
+                Publisher = txtPublisher.Text.Trim();
+                Page = txtPages.Text.Trim();
+            }
+            try
+            {
+                using (MySqlConnection dbConn = new MySqlConnection(_connectionAddress))
+                {
+                    string updateBooksQuery = string.Format("UPDATE books SET Isbn='{0}', BookName='{1}', Publisher='{2}', Page='{3}' " +
+                                                            "WHERE idx={4};", Isbn, BookName, Publisher, Page, idx);
+                    dbConn.Open(); //db열기
+                    MySqlCommand command4 = new MySqlCommand(updateBooksQuery, dbConn);
+                    if(command4.ExecuteNonQuery() != 1)
+                    {
+                        MessageBox.Show("수정이 안됩니다!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("수정완료!");
+                    }
+
+                    string selectBookQuery = string.Format("SELECT * FROM books"); //query문 정의
+
+                    MySqlCommand command3 = new MySqlCommand(selectBookQuery, dbConn); //Mysql 문법(dbConn과 query를 넣음 객체에)
+                    MySqlDataAdapter adapter3 = new MySqlDataAdapter(command3); //db와 객체 사이를 연결
+                    DataTable dataTable3 = new DataTable();
+                    adapter3.Fill(dataTable3);
+
+                    BookDataGridView.DataSource = dataTable3; //DataGrid에 데이터를 뿌림
+
+                    dbConn.Close();
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            string _connectionAddress = dbInfo();
+            try
+            {
+                using (MySqlConnection dbConn = new MySqlConnection(_connectionAddress))
+                {
+                    string selectBooksQuery = string.Format("SELECT * FROM books");
+                    dbConn.Open(); //db열기
+
+                    MySqlCommand command3 = new MySqlCommand(selectBooksQuery, dbConn); //Mysql 문법(dbConn과 query를 넣음 객체에)
+                    MySqlDataAdapter adapter3 = new MySqlDataAdapter(command3); //db와 객체 사이를 연결
+                    DataTable dataTable3 = new DataTable();
+                    adapter3.Fill(dataTable3);
+
+                    BookDataGridView.DataSource = dataTable3; //DataGrid에 데이터를 뿌림
+
+                    dbConn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+}

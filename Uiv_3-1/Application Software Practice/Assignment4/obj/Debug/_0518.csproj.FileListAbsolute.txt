@@ -1,0 +1,13 @@
+C:\Users\User\Desktop\응소실\_0518\bin\Debug\_0518.exe.config
+C:\Users\User\Desktop\응소실\_0518\bin\Debug\_0518.exe
+C:\Users\User\Desktop\응소실\_0518\bin\Debug\_0518.pdb
+C:\Users\User\Desktop\응소실\_0518\obj\Debug\_0518.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\응소실\_0518\obj\Debug\_0518.Form1.resources
+C:\Users\User\Desktop\응소실\_0518\obj\Debug\_0518.Properties.Resources.resources
+C:\Users\User\Desktop\응소실\_0518\obj\Debug\_0518.csproj.GenerateResource.cache
+C:\Users\User\Desktop\응소실\_0518\obj\Debug\_0518.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\응소실\_0518\obj\Debug\_0518.exe
+C:\Users\User\Desktop\응소실\_0518\obj\Debug\_0518.pdb
+C:\Users\User\Desktop\응소실\_0518\obj\Debug\_0518.ArraryDataForm.resources
+C:\Users\User\Desktop\응소실\_0518\obj\Debug\_0518.ClassForm.resources
+C:\Users\User\Desktop\응소실\_0518\obj\Debug\_0518.PictureViewer.resources
