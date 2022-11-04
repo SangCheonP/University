@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>지역 및 전역변수</title>
+    <script>
+        var a1 = 100;
+        a2 = 200;
+        var t1;
+
+        // t2;//오류
+        function sum() {
+            var a3 = 300;
+            a4 = 400;
+            a2 = 500;
+            document.write("함수 내부에서 참조한 경우<br>");
+            document.write("a1 = " + a1 + "<br>");
+            document.write("a2 = " + a2 + "<br>");
+            document.write("a3 = " + a3 + "<br>");
+            document.write("a4 = " + a4 + "<br>");
+        }
+
+        document.write("함수 외부에서 참조한 경우<br>")
+        document.write("a1 = " + a1 + "<br>");
+        document.write("a2 = " + a2 + "<br>");
+        sum();
+    </script>
+</head>
+<body>
+</body>
+</html>
